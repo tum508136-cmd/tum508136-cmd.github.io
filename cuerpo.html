@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Ti 💌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ffd6e0, #fff0f5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .screen {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .active {
+      display: block;
+      animation: fade 1s ease;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 20px;
+      background-color: #ff8fab;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    img {
+      max-width: 80%;
+      border-radius: 15px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pantalla 1 -->
+  <div class="screen active" id="screen1">
+    <h1>¡GRACIAS POR DECIR QUE SI!</h1>
+    <p>Me hace sentir muy especial y feliz </p>
+    <button onclick="nextScreen(2)">Toca aquí 💌</button>
+  </div>
+
+  <!-- Pantalla 2 -->
+  <div class="screen" id="screen2">
+    <h2>Aqui hay cositas</h2>
+    <p>Solo para ti :3</p>
+    <button onclick="nextScreen(3)">Sigue...</button>
+  </div>
+
+  <!-- Pantalla 3 -->
+  <div class="screen" id="screen3">
+    <h2>Sin ti estaria</h2>
+    <h3>Completamente perdida :c</h3
+    <p>La verdad es esa, sin ti estaria perdida, no seria yo misma estria totalmente perdida.
+    Tu eres mi todo, el aire que respiro, sin ti todo seria tan vacio, incoloro, sin sentido o bueno
+    asi seria mi mundo sin ti. No puedo vivir sin ti, eso me aterra... como no tienes idea, me asusta muchisimo
+    quieo estar a tu lado siempre, nunca me quiero alejar de ti, quiero conocerte como ninguna otra perdona lo ah echo
+    poder decir que te gusta y lo que no te gusta, saber que te hace feliz y lo que te hace triste, quiero ser tu mejor amiga, tu confidente, tu compañera, tu todo
+    quiero ser la persona que te haga sonreir todos los dias, quiero ser la persona que te apoye en todo lo que hagas, quiero ser la persona que te ame incondicionalmente,
+    quiero ser la persona que te cuide y proteja siempre, quiero ser la persona que te haga sentir amado y especial todos los dias, quiero ser la persona que te haga sentir completo y feliz,
+    quiero ser la persona que te haga sentir amado y valorado todos los dias, quiero ser la persona que te haga sentir amado y apreciado todos los dias, quiero ser la persona que te haga sentir amado y querido todos los dias.
+    Espero que si quede claro todo lo que quiero ser, es que quiero apoyarte y amarte como tu lo haces conmigo, y quiero que siempre quede claro
+    para que nunca pienses que quere a otra persona, eso imposible porque en mi codigo tu eres la vareable que hace que todo funcione y ese codigo
+    es mi vida y sin ti, sin tu vareable, no funcionaria... se romperia y se eliminaria...
+    Pero weno, te amo demaciado, continua ><
+    </p>
+    <button onclick="nextScreen(4)">Otra más...</button>
+  </div>
+
+  <!-- Pantalla 4 -->
+  <div class="screen" id="screen4">
+    <h2>esto no es todoo</h2>
+    <p style="font-size: 24px;">hay demaciado que quiero decirte</p>
+    <p> de echo, hay una cancion que lo explica </p>
+    <button onclick="nextScreen(5)">Siguiente</button>
+    <a href="https://music.youtube.com/watch?v=uyo9zQvtKbE&si=_NpFR3Mvca5i2uIo" target="_blank">
+  <button>Escuchar canción 🎵</button>
+</a>
+  </div>
+
+  <!-- Pantalla 5-->
+  <div class="screen" id="screen5">
+    <h1>Espera, aun hay más</h1>
+    <p>otra cartita para ti</p>
+    <button onclick="nextScreen(7)">Siguiente</button>
+    <a href=" https://canva.link/x0rk1xw33uprmka" target="_blank">
+  <button>Ver carta 💌</button>
+</a>
+  </div>
+
+  <!-- Pantalla 6 -->
+  <div class="screen" id="screen6">
+    <h1>No olvides checar tu correo</h1>
+    <p>tambien hay un mensaje para ti</p>
+    <button onclick="nextScreen(7)">Siguiente</button>
+  </div>
+
+  <!-- Pantalla 7 -->
+  <div class="screen" id="screen7">
+    <h1>Te amo demaciado</h1>
+    <p>Espero que te guste todo lo que prepare para ti, y espero que sea un dia especial para ti, porque tu eres una persona muy especial para mi,
+     y te mereces todo lo mejor del mundo, no solo archivos :c.</p>
+     <button onclick="nextScreen(8)">Fin</button>
+  </div>
+
+<!-- plantilla 8 -->
+  <div class="screen" id="screen8">
+    <h1>Feliz mesesario, amor mio</h1>
+    <p> Te ame ayer, te amo hoy y te amare mañana, Lo dire hasta con mi ultimo aliento</p>
+
+  <!-- Música -->
+  <audio id="music" autoplay loop>
+    <source src="I Wanna Be Yours - Arctic Monkeys (sub españolinglés).mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function nextScreen(num) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById('screen' + num).classList.add('active');
+
+      // Iniciar música al primer click
+      document.getElementById('music').play();
+    }
+  </script>
+</body>
+</html>

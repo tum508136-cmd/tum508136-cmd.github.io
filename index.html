@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Una pregunta 💗</title>
+  <style>
+    body {
+      background: #ffe4ec;
+      text-align: center;
+      font-family: Arial;
+      margin-top: 100px;
+    }
+    h2 {
+      color: #ff4d6d;
+    }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+      position: absolute;
+    }
+    #si {
+      background: #ff4d6d;
+      color: white;
+      left: 45%;
+    }
+    #no {
+      background: #999;
+      color: white;
+      left: 55%;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>¿Te gustan mis regalos? 💗</h2>
+
+  <button id="si" class="btn" onclick="irFinal()">sí 💗</button>
+  <button id="no" class="btn" onmouseover="moverNo()">no</button>
+
+  <p id="mensaje"></p>
+
+  <script>
+    let tamaño = 16;
+
+    function irFinal() {
+  window.location.href = "cuerpo.html";
+}
+
+    function moverNo() {
+      let x = Math.random() * window.innerWidth;
+      let y = Math.random() * window.innerHeight;
+
+      let botonNo = document.getElementById("no");
+      botonNo.style.left = x + "px";
+      botonNo.style.top = y + "px";
+
+      // hacer el botón "sí" más grande cada vez
+      tamaño += 5;
+      document.getElementById("si").style.fontSize = tamaño + "px";
+    }
+  </script>
+</body>
+</html>
