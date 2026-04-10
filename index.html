@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Una pregunta 💗</title>
+
+<style>
+body {
+  background: #ffe4ec;
+  text-align: center;
+  font-family: Arial;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+h2 {
+  color: #ff4d6d;
+}
+
+.btn {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  transition: 0.2s;
+}
+
+#si {
+  background: #ff4d6d;
+  color: white;
+  left: 30%;
+  top: 60%;
+}
+
+#no {
+  background: #999;
+  color: white;
+  left: 55%;
+  top: 60%;
+}
+</style>
+</head>
+
+<body>
+
+<h2>¿Te gustan mis regalos? 💗</h2>
+
+<button id="si" class="btn" onclick="irFinal()">sí 💗</button>
+<button id="no" class="btn" onclick="moverNo()" ontouchstart="moverNo()">no</button>
+
+<script>
+let tamaño = 18;
+
+function irFinal() {
+  window.location.href = "cuerpo.html";
+}
+
+function moverNo() {
+  let botonNo = document.getElementById("no");
+
+  let maxX = window.innerWidth - botonNo.offsetWidth;
+  let maxY = window.innerHeight - botonNo.offsetHeight;
+
+  let x = Math.random() * maxX;
+  let y = Math.random() * maxY;
+
+  botonNo.style.left = x + "px";
+  botonNo.style.top = y + "px";
+
+  // hacer el botón "sí" más grande
+  tamaño += 5;
+  document.getElementById("si").style.fontSize = tamaño + "px";
+}
+</script>
+
+</body>
+</html>
